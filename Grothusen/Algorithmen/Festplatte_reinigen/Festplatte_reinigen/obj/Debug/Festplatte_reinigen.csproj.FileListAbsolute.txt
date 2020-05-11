@@ -1,0 +1,9 @@
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\bin\Debug\Festplatte_reinigen.exe.config
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\bin\Debug\Festplatte_reinigen.exe
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\bin\Debug\Festplatte_reinigen.pdb
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\obj\Debug\Festplatte_reinigen.csprojAssemblyReference.cache
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\obj\Debug\Festplatte_reinigen.Form1.resources
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\obj\Debug\Festplatte_reinigen.Properties.Resources.resources
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\obj\Debug\Festplatte_reinigen.csproj.GenerateResource.cache
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\obj\Debug\Festplatte_reinigen.exe
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Festplatte_reinigen\Festplatte_reinigen\obj\Debug\Festplatte_reinigen.pdb
