@@ -13,7 +13,7 @@ namespace Festplatte_reinigen
 {
     public partial class Form1 : Form
     {
-        private string Pfad;
+        
 
         public Form1()
         {
@@ -25,22 +25,37 @@ namespace Festplatte_reinigen
         {
             
             folderBrowserDialog2.ShowDialog();
-            Pfad = folderBrowserDialog2.SelectedPath;
+
+
+            treeView1.Nodes.Add(dirfind(new DirectoryInfo(folderBrowserDialog2.SelectedPath)));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             
-            DirectoryInfo di = new DirectoryInfo(Pfad);
-            foreach (FileInfo file in di.GetFiles())
-            {
-
-            };
+            //DirectoryInfo di = new DirectoryInfo(Pfad);
+            //foreach (FileInfo file in di.GetFiles())
+            //{
+                
+            //    treeView1.Nodes.Add(file.Name);   
+            //};
         }
 
-        private void folderBrowserDialog2_HelpRequest(object sender, EventArgs e)
+        private TreeNode dirfind(DirectoryInfo di)
         {
-            
+            //DirectoryInfo di = new DirectoryInfo(directoryInfo.FullName);
+            TreeNode baum = new TreeNode(di.Name);
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                
+                
+                baum.Nodes.Add(dirfind(dir));
+            }
+            foreach(FileInfo file in di.GetFiles())
+            {
+                baum.Nodes.Add(file.Name);
+            }
+            return baum;
         }
     }
 }
