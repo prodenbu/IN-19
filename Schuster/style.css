@@ -1,0 +1,40 @@
+a:hover{
+    cursor: default;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    color: unset;
+}
+a:visited{
+    text-transform: unset;
+}
+h1.enter{
+    text-align: center;
+    font-size: 400%;
+    transition: .5s ease-out;
+    font-family: Comic Sans MS;
+}
+.inhalt{
+    width: 960px;
+    margin: auto;
+    background-color: black;
+}
+a.simple{
+    text-decoration: unset;
+    color: inherit;
+}
+.center{
+    position: absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+.Hover{
+    transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.Hover:hover{
+    font-size: 150%;    
+}
