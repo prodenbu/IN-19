@@ -50,8 +50,7 @@ Fragen und Antworten:
     
     Ich habe dafür eine Tabelle erstellt, wo ich alle Daten für jeden Tag einfüge. Nachdem 
     ich mir die Daten seit 2000 geholt habe, hat diese Tabelle ~165.000 Einträge. Außerdem 
-    sorgt ein Cronjob dafür, dass Täglich
-    die neuen Daten eingefügt werden.
+    sorgt ein Cronjob dafür, dass Täglich die neuen Daten eingefügt werden.
     Ursprünglich wollte ich für jede Devise eine eigene Tabelle erstellen, konnte in der 
     Prozedur aber keine Variablen Tabellennamen einfügen. 
 
