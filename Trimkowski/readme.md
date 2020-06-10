@@ -55,18 +55,21 @@ Fragen und Antworten:
 
 
 8.Erstelle nach 7. ein SQL SELECTStatement, dasbeliebige Beträge von einer Währung in eine andere umrechnet. Dabei soll immer der aktuelle Kurs verwendet werden.
+    
     Siehe Umrechnung.sql
 
 
 
 
 9.Erstelle nach 7. ein SQL SELECTStatement, dasbeliebige Beträge von einer Währung in eine andere umrechnet. Dabei soll immer der Kurszu einem beliebigen Datumverwendet werden.
+    
     Siehe Umrechnung2.sql
 
 
 
 
 10.Zur Aktualisierung der Kurse: welche Zeitgranularitäten (Tage/Stunden/Minuten/...) könnten verwendet werden? Wie wirkt sich die auf die Datentypen der Tabelleund auf die Selects der Aufgaben 6/8/9aus?
+
     In meiner Lösung ist nur eine Tägliche aktualisierung möglich, da die API nicht öfter aktualisiert wird. Würde man mehrmals täglich neue Daten einfügen, müsste anstatt von dem Typen 'DATE', 'DATETIME' verwendete
     werden. Außerdem muss entweder eine feste Zeit für die vergangenen Tage festgelegt werden, oder der Nutzer muss auch diese auswählen können. Es stellt sich dann auch die Frage, ob mein bei Historischen Werten, 
     die Uhrzeit bestimmen muss, oder ob das zu genau ist. 
@@ -74,11 +77,13 @@ Fragen und Antworten:
 
 
 
-11.Wenn Du MS SQL Server Express gewählt hast, implementieredie Historisierung der Daten durch eine „temporale Tabelle“(https://docs.microsoft.com/de-de/sql/relational-databases/tables/temporal-table-usage-scenarios?view=sql-server-ver15). 
+11.Wenn Du MS SQL Server Express gewählt hast, implementieredie Historisierung der Daten durch eine „temporale Tabelle“(https://docs.microsoft.com/de-de/sql/relational-databases/tables/temporal-table-usage-scenarios?view=sql-server-ver15).
+
     Ich habe MySQL verwendet :/
 
 
 
 
 12.Erstelle eine Dokumentation für Dein Projekt.
+
     https://github.com/prodenbu/IN-19/tree/master/Trimkowski
