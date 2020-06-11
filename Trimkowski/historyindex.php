@@ -18,58 +18,87 @@
                 $username = "newphp";
                 $password = "1234";
                 $dbname = 'project';
-
                 $conn = new mysqli($servername, $username, $password, $dbname);
                 $link = mysqli_connect($servername, $username, $password, $dbname);
-
                 ?>
                 <h1>Währungen Umrechnen</h1>
-
                 <form action="" class="my-2" method="post">
-
                     <!-- Erste Währung auswählen -->
-                    Von:
-                    <select name="drop1" value="">
-                        <!--
+                    <!--
                      Devisen in die Dropdown Liste einfügen 
                     Andere Datenbank verwendet, weil sonst alle 165.000 Einträge aufgelistet werden. 
                     -->
-                        <?php
-                        $result = mysqli_query($conn, "SELECT * from devisen;");
+                    <?php
+                    if (isset($_POST['setDate'])) {
+                        $result = mysqli_query($conn, "SELECT devise from getHistory where Datum = '" . $_POST['datum'] . "';");
+                        if ($result->num_rows > 1) {
+                            $visible = 'invisible';
+                            echo $conn->error;
+                            echo 'Von:
+                            <select name="drop1" value="">';
+                            $result = mysqli_query($conn, "SELECT devise from getHistory where Datum = '" . $_POST['datum'] . "';");
+                            $i = 0;
+                            while ($row = mysqli_fetch_array($result)) {
+                                // USD Pre selected
+                                if ($i === 26) {
+                                    echo "<option selected value=$row[devise]>$row[devise]</option>";
+                                } else {
+                                    # code...
+                                    echo "<option value=$row[devise]>$row[devise]</option>";
+                                }
+                                $i++;
+                            }
+                        } else {
+                            echo '<div class="alert-danger">Du musst ein anderes Datum auswählen</div>';
+                            unset($_POST['setDate']);
+                        }
+                    }
+                    ?>
+                    </select>
+                    <!-- Zweite Währung auswählen -->
+                    <?php
+                    if (isset($_POST['setDate'])) {
+
+                        echo ' Zu:
+                        <select name="drop2">';
+                        $result = mysqli_query($conn, "SELECT devise from getHistory where Datum = '" . $_POST['datum'] . "';");
                         $i = 0;
                         while ($row = mysqli_fetch_array($result)) {
                             // USD Pre selected
-                            if ($i === 26) {
-                                echo "<option selected value=$row[Devise]>$row[Devise]</option>";
+                            if ($i === 24) {
+                                echo "<option selected value=$row[devise]>$row[devise]</option>";
                             } else {
                                 # code...
-                                echo "<option value=$row[Devise]>$row[Devise]</option>";
+                                echo "<option value=$row[devise]>$row[devise]</option>";
                             }
                             $i++;
                         }
-                        ?>
-                    </select>
-
-                    <!-- Zweite Währung auswählen -->
-                    Zu:
-                    <select name="drop2">
-                        <?php
-                        $result = mysqli_query($conn, "SELECT * from devisen;");
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo "<option value=$row[Devise]> $row[Devise] </option>";
-                        }
-                        ?>
+                    }
+                    ?>
                     </select>
                     <!-- Mengenangabe, Datumsangabe und Submit -->
-                    <input type="number" placeholder="15.20" step="0.1" class="form-control" id="data" name="data" min="0">
+                    <?php
+                    if (isset($_POST['setDate'])) {
+                        echo '<input type="number" placeholder="15.231" step="0.001" class="form-control" id="data" name="data" min="0">';
+                    }
+                    ?>
                     <form action="">
-                        <label for="dateSelect">Wähle Datum</label>
-
-                        <input type="date" id="datum" value="2000-01-03" name="datum">
-
-                        <input type="submit" class="btn btn-primary" value="Berechnen" name="submit">
+                        <?php
+                        if (!isset($_POST['setDate'])) {
+                            echo '<label for="dateSelect">Wähle Datum</label>';
+                        }
+                        echo '<input type="date" id="datum" value="2000-01-03" class="' . $visible . '" name="datum">';
+                        if (!isset($_POST['setDate'])) {
+                            echo '<input type="submit" class="btn btn-primary" value="Datum setzen" name="setDate">';
+                            $visible = null;
+                        }
+                        ?>
+                        <?php
+                        if (isset($_POST['setDate'])) {
+                            echo '<input type="submit" class="btn btn-primary" value="Berechnen" name="submit">';
+                        }
+                        ?>
                     </form>
-
                 </form>
                 <?php
                 // Bei Knopfdruck 
@@ -79,7 +108,6 @@
                     //Fehler Ausgeben, falls vorhanden 
                     if ($conn->error) {
                         echo '<div class="alert-info">Du musst eine Zahl eingeben!</div>';
-                        echo $conn->error;
                     };
                     //   Ergebniss ausgeben
                     while ($test_row = mysqli_fetch_array($result_test)) {
@@ -88,7 +116,6 @@
                             echo "Das Ergebnis lautet: " .  $test_row[0] . " " . $_POST['drop2'];
                         } else {
                             echo '<div class="alert-danger">Wochenden gibt es hier nicht!!!</div>';
-                            echo $conn->error;
                         }
                     }
                 }

@@ -82,3 +82,21 @@ Fragen und Antworten:
 12.Erstelle eine Dokumentation für Dein Projekt. 
 
     https://github.com/prodenbu/IN-19/tree/master/Trimkowski
+
+
+Probleme und Lösungen:
+    Ich bin auf einige Probleme gestoßen:
+        1. Ich habe in der History Anwendung die Devisennamen aus der devisen Tabelle genommen, was problematisch wurde. 
+		Da es aktuell verschiedene Devisen gibt, die es früher nicht gab, musste ich 
+        die Devisennamen aus der getHistory Tabelle importieren. Daraus folgt das Problem, dass ich nicht einfach den Tabellennamen 
+		in der Abfrage ändern kann. Hätte ich das gemacht, würden alle 165.000 in die Dropdown Liste eingtragen werden.
+		Ich habe die ganze Struktur der Anwendung so verändert, dass man nun erst ein Datum auswählen muss und dann erst 
+		die Dropdown Liste erstellt wird. So kann ich sicherstellen, dass alle zu der Zeit verfügbaren Währungen in die Liste kommen. 
+
+        2. Da die API keine Werte für Samstage und Sonntage hat, kann man mit meiner Anwendung an diesen Daten keine Währungen
+		umrechnen. Ich habe eine Fehlermeldung für diesen Fall angelegt.
+
+        3. Daten die in der Zukunft liegen erhalten die selbe Fehlermeldung, wie aus 2. 
+		
+		4. Ich habe am 11.06. die Historie anwendung funktionsunfähig gemacht und musste diese aus einem Backup wieder
+		richten. Ich war dabei Fehleingaben zu vermeiden. Nun kommen passende Fehlermeldungen zu den passenden Zeitpunkten. 

@@ -62,8 +62,8 @@
               </select>
               <!-- Mengenangabe, Datumsangabe und Submit -->
               <form action="">
-                <input type="number" placeholder="15.20" step="0.1" class="form-control" id="data" name="data" min="0">
-                <label for="dateSelect">Wähle Datum</label>
+                <input type="number" placeholder="15.123" step="0.001" class="form-control" id="data" name="data" min="0">
+                <!-- <label for="dateSelect">Wähle Datum</label> -->
                 <input type="submit" class="btn btn-primary" value="Berechnen" name="submit">
               </form>
 
@@ -79,17 +79,17 @@
                     echo '<div class="alert-info">Du musst eine Zahl eingeben!</div>';
                 };
                 //   Ergebniss ausgeben
-                while ($test_row = mysqli_fetch_array($result_test)) {
-                    if ($test_row[0] > 0) {
+                while ($ergebiss = mysqli_fetch_array($result_test)) {
+                    if ($ergebiss[0] > 0) {
                         # code...
-                        echo "Das Ergebnis lautet: " .  $test_row[0] . " " . $_POST['drop2'];
+                        echo "Das Ergebnis lautet: " .  $ergebiss[0] . " " . $_POST['drop2'];
                     } else {
                         echo '<div class="alert-danger">Wochenden gibt es hier nicht!!!</div>';
                     }
                 }
             }
             ?>
-
+            <a href="historyindex.php " class="alert-link">Historische Währungen umrechnen</a>
           </div>
         </div>
       </div>

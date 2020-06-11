@@ -13,9 +13,9 @@
     foreach (array_keys($rates) as $key) {
         $sql = "INSERT INTO getHistory VALUES('$data[date]','$key', $rates[$key])";
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully </br>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
+    echo "Records created successfully on " . $data[date];
     ?>
