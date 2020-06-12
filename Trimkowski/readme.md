@@ -1,6 +1,6 @@
-Datenbank Projekt für IN-19
+# Datenbank Projekt für IN-19
 
-Fragen und Antworten:
+# Fragen und Antworten:
 
 ## 1.Falls noch nicht geschehen, installiere ein SQL-System Deiner Wahl., z.B.kostenlos:a.Firebird mit Flamerobin,b.MS SQL Server Express mit Server Management Studio,c.MySql mit Workbench
     
@@ -12,7 +12,7 @@ Fragen und Antworten:
 
 ## 2.Suche im Internet eine Seite mit aktuellen Devisenkursen, z.B. https://www.comdirect.de/inf/maerkte/waehrungen.html
     
-    Die Devisen API ist https://exchangeratesapi.io 
+    Die Devisen API ist [https://exchangeratesapi.io](https://exchangeratesapi.io) 
     Diese habe ich ausgewählt, da Kollegen die bereits nutzen.
     Granularität: Täglich
 
@@ -23,6 +23,8 @@ Fragen und Antworten:
     für US Dollar, und die dazugehörigen Dezimalwerte hinterlegt. Die einzelnen Werte sind bis auf 
     einige Nachkommastellen genau.(createDatabase.sql)
     ```sql
+    'devisen', 'CREATE TABLE `devisen` (\n  `Devise` varchar(3) DEFAULT NULL,\n  `Wert` double DEFAULT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
+```
     
 
 
