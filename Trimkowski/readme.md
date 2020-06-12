@@ -159,3 +159,13 @@ Da es aktuell verschiedene Devisen gibt, die es früher nicht gab, musste ich di
 2. Da die API keine Werte für Samstage und Sonntage hat, kann man mit meiner Anwendung an diesen Daten keine Währungen umrechnen. Ich habe eine Fehlermeldung für diesen Fall angelegt. Daten die in der Zukunft liegen erhalten die selbe Fehlermeldung.
 <br><br>
 3. Ich habe am 11.06. die Historie anwendung funktionsunfähig gemacht und musste diese aus einem Backup wieder richten. Ich war dabei Fehleingaben zu vermeiden. Nun kommen passende Fehlermeldungen zu den passenden Zeitpunkten. 
+
+# Bilder
+## Aktuelle Werte umrechnen
+![Schade:C Dann nicht](https://raw.githubusercontent.com/prodenbu/IN-19/master/Trimkowski/Bilder/Aktuelle_Kurse.png)<br>
+## Historische Werte umrechen 
+![Schade :C Dann nicht](https://raw.githubusercontent.com/prodenbu/IN-19/master/Trimkowski/Bilder/Historisch1.png)<br>
+![Schade :C Dann nicht](https://raw.githubusercontent.com/prodenbu/IN-19/master/Trimkowski/Bilder/Historisch2.png)
+
+## Ergebnis
+![Schade :C Dann nicht](https://raw.githubusercontent.com/prodenbu/IN-19/master/Trimkowski/Bilder/Ergebniss.png)
