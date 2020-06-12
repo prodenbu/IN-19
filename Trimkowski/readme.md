@@ -2,7 +2,7 @@ Datenbank Projekt für IN-19
 
 Fragen und Antworten:
 
-1.Falls noch nicht geschehen, installiere ein SQL-System Deiner Wahl., z.B.kostenlos:a.Firebird mit Flamerobin,b.MS SQL Server Express mit Server Management Studio,c.MySql mit Workbench
+## 1.Falls noch nicht geschehen, installiere ein SQL-System Deiner Wahl., z.B.kostenlos:a.Firebird mit Flamerobin,b.MS SQL Server Express mit Server Management Studio,c.MySql mit Workbench
     
     Ich habe einen MySQL Server auf einer virtuellen Maschine eingerichtet. Für die Anwendung habe
      ich anschließend ein PHPUser angelegt. Dieser hat sämtliche Rechte auf den Server, da ich diesen
@@ -10,21 +10,23 @@ Fragen und Antworten:
      Apache Webserver mit PHP. 
 
 
-2.Suche im Internet eine Seite mit aktuellen Devisenkursen, z.B. https://www.comdirect.de/inf/maerkte/waehrungen.html
+## 2.Suche im Internet eine Seite mit aktuellen Devisenkursen, z.B. https://www.comdirect.de/inf/maerkte/waehrungen.html
     
     Die Devisen API ist https://exchangeratesapi.io 
     Diese habe ich ausgewählt, da Kollegen die bereits nutzen.
     Granularität: Täglich
 
 
-3.Erstelle eine Datenbank mit einer Devisentabelle
+## 3.Erstelle eine Datenbank mit einer Devisentabelle
     
     Ich habe eine Tabelle für alle Devisen angelegt. Da sind die Abkürzungen, wie z.B. USD 
     für US Dollar, und die dazugehörigen Dezimalwerte hinterlegt. Die einzelnen Werte sind bis auf 
     einige Nachkommastellen genau.(createDatabase.sql)
+    ```sql
+    
 
 
-4.ETLImportieredie Daten. Nutze SQL INSERToder ein Tool Deiner Wahl.
+## 4.ETLImportieredie Daten. Nutze SQL INSERToder ein Tool Deiner Wahl.
     
     Mit einen PHP Skript habe ich die Daten aus der API in die Datenbank eingepflegt(siehe getdata.php).
 	Mit einem weiteren Skript(getHistoricaldata.php) habe ich mir die Daten von den vergangenen 20 Jahren,
@@ -35,18 +37,18 @@ Fragen und Antworten:
     Euro wert hinzugefügt habe.  
 
 
-5.Die Kurse ändern sich andauernd. Wie kann man die Tabelle aktuell halten? Nutze SQL UPDATEoder ein Tool Deiner Wahl.
+## 5.Die Kurse ändern sich andauernd. Wie kann man die Tabelle aktuell halten? Nutze SQL UPDATEoder ein Tool Deiner Wahl.
     
     Das getdata Skript habe ich als Cronjob auf den Webserver eingerichtet. Es wird täglich um 16:05 Uhr
     ausgeführt, da die API jeden Werktag um 16:00 Uhr neue Werte erhält.
 
 
-6.Erstelle ein SQL SELECT Statement, dasbeliebige Beträge von einer Währung in eine andere umrechnet.
+## 6.Erstelle ein SQL SELECT Statement, dasbeliebige Beträge von einer Währung in eine andere umrechnet.
     
     Siehe Umrechnung.sql
 
 
-7.Wie kann man die Kurse historisieren, also auch die Kurse vergangener Daten behalten?
+## 7.Wie kann man die Kurse historisieren, also auch die Kurse vergangener Daten behalten?
     
     Ich habe dafür eine Tabelle erstellt, wo ich alle Daten für jeden Tag einfüge. Nachdem 
     ich mir die Daten seit 2000 geholt habe, hat diese Tabelle ~165.000 Einträge. Außerdem 
@@ -55,17 +57,17 @@ Fragen und Antworten:
     Prozedur aber keine Variablen Tabellennamen einfügen. 
 
 
-8.Erstelle nach 7. ein SQL SELECTStatement, dasbeliebige Beträge von einer Währung in eine andere umrechnet. Dabei soll immer der aktuelle Kurs verwendet werden.
+## 8.Erstelle nach 7. ein SQL SELECTStatement, dasbeliebige Beträge von einer Währung in eine andere umrechnet. Dabei soll immer der aktuelle Kurs verwendet werden.
     
     Siehe Umrechnung.sql
 
 
-9.Erstelle nach 7. ein SQL SELECTStatement, dasbeliebige Beträge von einer Währung in eine andere umrechnet. Dabei soll immer der Kurszu einem beliebigen Datumverwendet werden.
+## 9.Erstelle nach 7. ein SQL SELECTStatement, dasbeliebige Beträge von einer Währung in eine andere umrechnet. Dabei soll immer der Kurszu einem beliebigen Datumverwendet werden.
     
     Siehe Umrechnung2.sql
 
 
-10.Zur Aktualisierung der Kurse: welche Zeitgranularitäten (Tage/Stunden/Minuten/...) könnten verwendet werden? Wie wirkt sich die auf die Datentypen der Tabelleund auf die Selects der Aufgaben 6/8/9aus?
+## 10.Zur Aktualisierung der Kurse: welche Zeitgranularitäten (Tage/Stunden/Minuten/...) könnten verwendet werden? Wie wirkt sich die auf die Datentypen der Tabelleund auf die Selects der Aufgaben 6/8/9aus?
 
     In meiner Lösung ist nur eine Tägliche aktualisierung möglich, da die API nicht öfter aktualisiert wird. 
     Würde man mehrmals täglich neue Daten einfügen, müsste anstatt von dem Typen 'DATE', 'DATETIME' verwendete
@@ -74,29 +76,32 @@ Fragen und Antworten:
     die Uhrzeit bestimmen muss, oder ob das zu genau ist. 
 
 
-11.Wenn Du MS SQL Server Express gewählt hast, implementieredie Historisierung der Daten durch eine „temporale Tabelle“(https://docs.microsoft.com/de-de/sql/relational-databases/tables/temporal-table-usage-scenarios?view=sql-server-ver15).
+## 11.Wenn Du MS SQL Server Express gewählt hast, implementieredie Historisierung der Daten durch eine „temporale Tabelle“(https://docs.microsoft.com/de-de/sql/relational-databases/tables/temporal-table-usage-scenarios?view=sql-server-ver15).
 
     Ich habe MySQL verwendet :/
 
 
-12.Erstelle eine Dokumentation für Dein Projekt. 
+## 12.Erstelle eine Dokumentation für Dein Projekt. 
 
     https://github.com/prodenbu/IN-19/tree/master/Trimkowski
 
 
-Probleme und Lösungen:
+## Probleme und Lösungen:
     Ich bin auf einige Probleme gestoßen:
-        1. Ich habe in der History Anwendung die Devisennamen aus der devisen Tabelle genommen, was problematisch wurde. 
+        1. 	Ich habe in der History Anwendung die Devisennamen aus der devisen Tabelle genommen, was problematisch wurde. 
 		Da es aktuell verschiedene Devisen gibt, die es früher nicht gab, musste ich 
-        die Devisennamen aus der getHistory Tabelle importieren. Daraus folgt das Problem, dass ich nicht einfach den Tabellennamen 
-		in der Abfrage ändern kann. Hätte ich das gemacht, würden alle 165.000 in die Dropdown Liste eingtragen werden.
-		Ich habe die ganze Struktur der Anwendung so verändert, dass man nun erst ein Datum auswählen muss und dann erst 
-		die Dropdown Liste erstellt wird. So kann ich sicherstellen, dass alle zu der Zeit verfügbaren Währungen in die Liste kommen. 
+        	die Devisennamen aus der getHistory Tabelle importieren. Daraus folgt das Problem,
+		dass ich nicht einfach den Tabellennamen in der Abfrage ändern kann. Hätte ich das 
+		gemacht, würden alle 165.000 in die Dropdown Liste eingtragen werden. Ich habe die 
+		ganze Struktur der Anwendung so verändert, dass man nun erst ein Datum auswählen
+		muss und dann erst die Dropdown Liste erstellt wird. So kann ich sicherstellen,
+		dass alle zu der Zeit verfügbaren Währungen in die Liste kommen. 
 
-        2. Da die API keine Werte für Samstage und Sonntage hat, kann man mit meiner Anwendung an diesen Daten keine Währungen
+        2.	Da die API keine Werte für Samstage und Sonntage hat, kann man mit meiner Anwendung 
+		an diesen Daten keine Währungen
 		umrechnen. Ich habe eine Fehlermeldung für diesen Fall angelegt.
 
-        3. Daten die in der Zukunft liegen erhalten die selbe Fehlermeldung, wie aus 2. 
+        3. 	Daten die in der Zukunft liegen erhalten die selbe Fehlermeldung, wie aus 2. 
 		
-		4. Ich habe am 11.06. die Historie anwendung funktionsunfähig gemacht und musste diese aus einem Backup wieder
+	4. 	Ich habe am 11.06. die Historie anwendung funktionsunfähig gemacht und musste diese aus einem Backup wieder
 		richten. Ich war dabei Fehleingaben zu vermeiden. Nun kommen passende Fehlermeldungen zu den passenden Zeitpunkten. 
