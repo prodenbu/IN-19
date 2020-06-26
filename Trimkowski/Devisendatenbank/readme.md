@@ -25,9 +25,14 @@ einige Nachkommastellen genau.<br> [create_Database.sql](https://github.com/prod
 ```sql
 CREATE DATABASE `project` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION=\'N\' */
 CREATE TABLE `devisen` (\n  `Devise` varchar(3) DEFAULT NULL,\n  `Wert` double DEFAULT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
-```
-    
+CREATE TABLE `getHistory` (`Datum` date NOT NULL, `devise` varchar(4) NOT NULL, `Wert` double DEFAULT NULL, PRIMARY KEY (`Datum`,`devise`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
+```
+Hier sind die Tabellen 
+<br> 
+
+![Schade :C Dann nicht](Bilder/devisen.png) 
+![Schade :C Dann nicht](Bilder/HistoryTable.png)
 
 ## 4. ETLImportieredie Daten. Nutze SQL INSERToder ein Tool Deiner Wahl.
     
