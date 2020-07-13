@@ -1,0 +1,11 @@
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\bin\Debug\netcoreapp3.1\Pathfinding.exe
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\bin\Debug\netcoreapp3.1\Pathfinding.deps.json
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\bin\Debug\netcoreapp3.1\Pathfinding.runtimeconfig.json
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\bin\Debug\netcoreapp3.1\Pathfinding.runtimeconfig.dev.json
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\bin\Debug\netcoreapp3.1\Pathfinding.dll
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\bin\Debug\netcoreapp3.1\Pathfinding.pdb
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\obj\Debug\netcoreapp3.1\Pathfinding.csprojAssemblyReference.cache
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\obj\Debug\netcoreapp3.1\Pathfinding.AssemblyInfoInputs.cache
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\obj\Debug\netcoreapp3.1\Pathfinding.AssemblyInfo.cs
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\obj\Debug\netcoreapp3.1\Pathfinding.dll
+C:\Users\prodenbu\Documents\GitHub\IN-19\Grothusen\Algorithmen\Pathfinding\obj\Debug\netcoreapp3.1\Pathfinding.pdb
